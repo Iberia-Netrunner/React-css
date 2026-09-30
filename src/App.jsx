@@ -1,13 +1,17 @@
 import { useState } from "react";
 
 function App() {
+  //State-variabel med object. 
   const [todos, setTodos] = useState([
     { id: 1, text: "Köp kaffe", done: false },
     { id: 2, text: "Öppna campet", done: true },
     { id: 3, text: "Pusha till GitHub", done: false },
   ]);
+  //Statevariabel tom, spårar vad användaren skriver.
   const [text, setText] = useState("");
-
+  
+  //Function som tar bort mellanslag
+  //Kör set uppdatering som och lägger till ny onjekt, sedan triggar re-render
   function addTodo(e) {
     e.preventDefault();
     const trimmed = text.trim();
@@ -18,20 +22,21 @@ function App() {
     ]);
     setText("");
   }
-
+  //Funktion som endast körs ifall användare klickar på knappen.
+  //Loopar genom arrayen och vänder på status till done:true/false för rätt item
   function toggleDone(id) {
     setTodos(
       todos.map((t) => (t.id === id ? { ...t, done: !t.done } : t))
     );
   }
-
+  
   function removeTodo(id) {
     setTodos(todos.filter((t) => t.id !== id));
   }
 
   return (
     <main className="app">
-      <h1>Min ToDo</h1>
+      <h1>Min-To-Do</h1>
       <form className="input-row" onSubmit={addTodo}>
         <input
           value={text}
