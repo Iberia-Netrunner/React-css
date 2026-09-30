@@ -30,9 +30,9 @@ function App() {
   }
 
   return (
-    <main>
+    <main className="app">
       <h1>Min ToDo</h1>
-      <form onSubmit={addTodo}>
+      <form className="input-row" onSubmit={addTodo}>
         <input
           value={text}
           onChange={(e) => setText(e.target.value)}
@@ -40,9 +40,9 @@ function App() {
         />
         <button type="submit">Lägg till</button>
       </form>
-      <ul>
+      <ul className="Todo-list">
         {todos.map((t) => (
-          <li key={t.id}>
+          <li key={t.id} className="todo">
             <button type="button" onClick={() => toggleDone(t.id)}>
               {t.done ? "Avmarkera" : "Klar"}
             </button>{" "}
