@@ -5,9 +5,11 @@
 }
 
 .input-row {
+  margin-top: 50px;
   display: flex;
   gap: 0.5rem;
   margin-bottom: 1rem;
+  
 }
 
 .todo-list {
@@ -18,4 +20,8 @@
 .todo {
   padding: 0.65rem 0;
   border-bottom: 1px solid #e2e8f0;
+}
+
+body {
+  background-color: rgb(17, 48, 78);
 }

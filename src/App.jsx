@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 
 function App() {
   //State-variabel med object. 
@@ -45,7 +46,7 @@ function App() {
         />
         <button type="submit">Lägg till</button>
       </form>
-      <ul className="Todo-list">
+      <ul className="todo-list">
         {todos.map((t) => (
           <li key={t.id} className="todo">
             <button type="button" onClick={() => toggleDone(t.id)}>
